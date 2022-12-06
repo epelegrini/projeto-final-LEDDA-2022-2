@@ -12,7 +12,7 @@
 
 creation of the repository for the final delivery of school work and creation of codes
 
-## My name is Gabriel Marinho - PT
+## My name is Gabriel Marinho - PT3021939
 | [<img src="https://avatars.githubusercontent.com/u/112014538?v=4" width=115><br><sub>Gabriel Marinho</sub>](https://github.com/ph0zzer) 
 
 ## Contatos:
