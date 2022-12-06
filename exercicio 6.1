@@ -4,7 +4,7 @@ using namespace std;
 struct vinho{
 char nome[30];
 char pais[30];
-int tipo;
+char tipo[30];
 int safra;
 vinho *prox;
 vinho *ant;
@@ -15,9 +15,11 @@ int menu(){
   int opcao;
 
   
-  cout << "            ********* ADEGA DOS MENINO ********* IFSP3000    v2.3\n\n";
+  cout << "          ***********   ADEGA DOS TRALHA   ***********       v6.9\n\n";
   
-  cout << "Digite 1 para adicionar vinhos à adega;\n\nDigite 2 para remover vinhos da adega\n\nDigite 3 para listar as primeiras e ultimas adições\n";
+  cout << "Digite 1 para adicionar vinhos à adega;\n\nDigite 2 para remover vinhos da adega\n\nDigite 3 para listar as primeiras e ultimas adições\n\nDigite 4 para encerrar o programa\n";
+
+  
   cin>>opcao;
   
   return opcao;
@@ -35,7 +37,14 @@ system("clear||cls");
   cin >> novo->pais;
   
   cout << "\nDigite o tipo da uva: ";
-  cin >> novo->tipo;
+  cin.ignore();
+  fgets(novo->tipo, 30, stdin);
+  fflush(stdin);
+  
+  int temp = 0;
+  for(int i = 0; novo->tipo[i] != '\0'; i++){
+  temp++;}
+  novo->tipo[temp-1] = '\0';
   
   cout << "\nDigite o ano da safra: ";
   cin >> novo->safra;
@@ -159,7 +168,8 @@ void listar (vinho *& primeiro, vinho *& ultimo){
   //Listar 5 primeiros//
 
   aux = ultimo;
-  cout << "Mais recentes:";
+  cout << "Mais recentes:\n\n";
+  cout << "\tNOME\t\t|\t\tPAÍS\t\t|\t\tTIPO\t\t|\t\tSAFRA\n";
   for (int i=0; i<5; i++){
     if(aux==NULL){
       
@@ -167,6 +177,9 @@ void listar (vinho *& primeiro, vinho *& ultimo){
       
     else{
       cout << "\t" << aux->nome;
+      cout << "\t\t|\t\t" << aux->pais;
+      cout << "\t\t|\t\t" << aux->tipo;
+      cout << "\t\t|\t\t" << aux->safra << "\n";
       aux = aux->ant;
     }
   }
@@ -174,13 +187,17 @@ void listar (vinho *& primeiro, vinho *& ultimo){
     //Listar 5 ultimos//
 
   aux = primeiro;
-  cout << "\nMais antigos:";
+  cout << "\n\n\nMais antigos:\n\n";
+    cout << "\tNOME\t\t|\t\tPAÍS\t\t|\t\tTIPO\t\t|\t\tSAFRA\n";
   for (int i=0; i<5; i++){
     if(aux==NULL){
       
     }
     else{
-      cout  << "\t" << aux->nome;
+      cout << "\t" << aux->nome;
+      cout << "\t\t|\t\t" << aux->pais;
+      cout << "\t\t|\t\t" << aux->tipo;
+      cout << "\t\t|\t\t" << aux->safra << "\n";
       aux = aux->prox;
     }
   }
@@ -221,7 +238,7 @@ int main() {
     
     case 4:
     exit = true;
-
+    break;
     default:
     cout<<"\n\nOPÇÃO INVALIDA!\n\n";
     cout << "\n\nPressione qualquer tecla para voltar ao menu principal\n";
@@ -233,3 +250,4 @@ int main() {
   system("clear||cls");
   cout << "Programa encerrado!";
 }
+
