@@ -1,10 +1,8 @@
 
-## My name is Enzo Pelegrini - PT3022277
-## Meu nome é Enzo Pelegrini
+## My name is Enzo Pelegrini /  Meu nome é Enzo Pelegrini - PT3022277
 | [<img src="https://avatars.githubusercontent.com/u/113308665?s=96&v=4" width=115><br><sub>Enzo Pelegrini</sub>](https://github.com/epelegrini)
 
-## Contacts:
-## Contatos:
+## Contacts / Contatos:
 
 <div>
 <a href="https://instagram.com/enzospelegrini/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
@@ -18,12 +16,10 @@ criação do repositório para entrega final dos trabalhos escolares e criação
 
 
 
-## My name is Gabriel Marinho - PT3021939
-## Meu nome é Gabriel Marinho
+## My name is Gabriel Marinho / Meu nome é Gabriel Marinho - PT3021939
 | [<img src="https://avatars.githubusercontent.com/u/112014538?v=4" width=115><br><sub>Gabriel Marinho</sub>](https://github.com/ph0zzer) 
 
-## Contacts:
-## Contatos:
+## Contacts / Contatos:
 
 <div>
 <a href="https://instagram.com/@g.marinhow/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
