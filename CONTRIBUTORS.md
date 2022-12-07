@@ -10,7 +10,7 @@
 <a href="https://www.linkedin.com/in/enzo-pelegrini-26b20a206/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
 </div>
 
-creation of the repository for the final delivery of school work and creation of codes
+creation of the repository for the final delivery of school work and creation of codes<br>
 criação do repositório para entrega final dos trabalhos escolares e criação de códigos
 
 
@@ -27,5 +27,5 @@ criação do repositório para entrega final dos trabalhos escolares e criação
 <a href="https://www.linkedin.com/in/gabriel-mwsiqueira/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
 </div>
 
-greater understanding of the proposed logic and application/creation of codes
+greater understanding of the proposed logic and application/creation of codes<br>
 maior compreensão da lógica proposta e aplicação/criação de códigos
