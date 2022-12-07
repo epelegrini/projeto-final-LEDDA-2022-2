@@ -1,7 +1,9 @@
 
 ## My name is Enzo Pelegrini - PT3022277
+## Meu nome é Enzo Pelegrini
 | [<img src="https://avatars.githubusercontent.com/u/113308665?s=96&v=4" width=115><br><sub>Enzo Pelegrini</sub>](https://github.com/epelegrini)
 
+## Contacts:
 ## Contatos:
 
 <div>
@@ -11,13 +13,16 @@
 </div>
 
 creation of the repository for the final delivery of school work and creation of codes
+criação do repositório para entrega final dos trabalhos escolares e criação de códigos
 
 
 
 
 ## My name is Gabriel Marinho - PT3021939
+## Meu nome é Gabriel Marinho
 | [<img src="https://avatars.githubusercontent.com/u/112014538?v=4" width=115><br><sub>Gabriel Marinho</sub>](https://github.com/ph0zzer) 
 
+## Contacts:
 ## Contatos:
 
 <div>
@@ -27,3 +32,4 @@ creation of the repository for the final delivery of school work and creation of
 </div>
 
 greater understanding of the proposed logic and application/creation of codes
+maior compreensão da lógica proposta e aplicação/criação de códigos
