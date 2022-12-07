@@ -73,7 +73,7 @@ int pop(struct Stack * & topo){
    free(aux);               
 
   if(aux != topo){           
-    cout << "\n"<< val << " Removido da pilha!\n";
+    cout << "\n"<< val << " Removido da pilha! \n";
   }
 
   else{
