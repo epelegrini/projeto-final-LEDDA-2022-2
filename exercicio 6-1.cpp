@@ -15,7 +15,7 @@ int menu(){
   int opcao;
 
   
-  cout << "          ***********   ADEGA DOS TRALHA   ***********       v6.9\n\n";
+  cout << "          **  VINÍCOLA DOS TRALHAS  **       v6.9\n\n";
   
   cout << "Digite 1 para adicionar vinhos à adega;\n\nDigite 2 para remover vinhos da adega\n\nDigite 3 para listar as primeiras e ultimas adições\n\nDigite 4 para encerrar o programa\n";
 
