@@ -25,7 +25,7 @@ int menu(){
   return opcao;
 }
 
-void add(vinho *& primeiro, vinho *& ultimo){
+void add(vinho *& primeiro, vinho *&  ultimo){
 system("clear||cls");
   vinho *novo;
   novo = (vinho*) calloc (1, sizeof(vinho));
