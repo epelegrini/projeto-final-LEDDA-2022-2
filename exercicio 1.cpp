@@ -10,7 +10,7 @@ struct Stack {
 
 int quantidade(Stack * & topo){ 
   
- Stack *temp = topo; 
+ Stack *temp =  topo; 
  int qnt = 0; 
   
    while(temp != NULL){  
