@@ -6,7 +6,7 @@ using namespace std;
 
 struct cliente{
 int tran;
-cliente *prox;
+cliente * prox;
 cliente *ant;
 int ini;
 int fim;
