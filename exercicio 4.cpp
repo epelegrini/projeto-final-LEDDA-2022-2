@@ -4,7 +4,7 @@ using namespace std;
 int i = 0;
 struct fila{
  int dado;
- fila *prox;
+ fila * prox;
 };
 
 void enqueue(fila *& primeiro, fila *& ultimo, int dado){
