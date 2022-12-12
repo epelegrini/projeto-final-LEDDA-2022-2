@@ -5,7 +5,7 @@ using namespace std;
 
 struct fila{
  int dado;
- fila *prox;
+ fila  *prox;
 };
 
 struct pilha{
