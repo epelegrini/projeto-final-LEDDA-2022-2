@@ -4,7 +4,7 @@ using namespace std;
 
 struct Queue { 
     int dado; 
-    Queue *prox; 
+    Queue * prox; 
 }; 
 
 int quantidade(Queue * & ultimo){ 
