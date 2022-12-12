@@ -5,7 +5,7 @@ using namespace std;
 
 struct Stack { 
     int dado; 
-    Stack *prox;
+    Stack * prox;
 }; 
 
 void push(Stack * & topo, int dado){
