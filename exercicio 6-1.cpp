@@ -2,30 +2,23 @@
 using namespace std;
 
 struct vinho{
-char nome[30];
-char pais[30];
-char tipo[30];
+char nome[30], pais[30], tipo[30];
 int safra;
-vinho *prox;
-vinho *ant;
+vinho *next, *prev;
 };
 
 int menu(){
   system("clear||cls");
-  int opcao;
-
-
-  cout << "          **  VINÍCOLA DOS TRALHAS  **       v6.9\n\n";
-
+  int select;
+  
+  cout << "          ***********   Vinícola dos muleke  ***********       v4.7\n\n";
+  
   cout << "Digite 1 para adicionar vinhos à adega;\n\nDigite 2 para remover vinhos da adega\n\nDigite 3 para listar as primeiras e ultimas adições\n\nDigite 4 para encerrar o programa\n";
-
-
-  cin>>opcao;
-
-  return opcao;
+  cin>>select;
+  return select;
 }
 
-void add(vinho *& primeiro, vinho *&  ultimo){
+void aloc(vinho *& first, vinho *& last){
 system("clear||cls");
   vinho *novo;
   novo = (vinho*) calloc (1, sizeof(vinho));
@@ -34,83 +27,82 @@ system("clear||cls");
   cin.ignore();
   fgets(novo->nome, 30, stdin);
   fflush(stdin);
-
+  
   int temp = 0;
   for(int i = 0; novo->nome[i] != '\0'; i++){
   temp++;}
   novo->nome[temp-1] = '\0';
-
-
-  cout << "\nDigite o pais de origem: ";
+  
+  cout << "\nDigite o país de origem: ";
   cin >> novo->pais;
-
+  
   cout << "\nDigite o tipo da uva: ";
   cin.ignore();
   fgets(novo->tipo, 30, stdin);
   fflush(stdin);
-
+  
   temp = 0;
   for(int i = 0; novo->tipo[i] != '\0'; i++){
   temp++;}
   novo->tipo[temp-1] = '\0';
-
+  
   cout << "\nDigite o ano da safra: ";
   cin >> novo->safra;
+  
+  if(first == NULL){
 
-  if(primeiro == NULL){
-
-    primeiro = novo;
-    ultimo = novo;
-    novo->ant = NULL;
-    novo->prox = NULL;
+    first = novo;
+    last = novo;
+    novo->prev = NULL;
+    novo->next = NULL;
     cout << "\n\nVinho adicionado com sucesso à adega!\n";
   }
 
   else{
-
-    novo->ant = ultimo;
-    novo->prox = NULL;
-    ultimo->prox = novo;
-    ultimo = novo;
+    
+    novo->prev = last;
+    novo->next = NULL;
+    last->next = novo;
+    last = novo;
     cout << "\n\nVinho adicionado com sucesso à adega!\n";
   }
 
 }
 
-void retirar(vinho *& primeiro, vinho *& ultimo){
-
+void remov(vinho *& first, vinho *& last){
+  
   system("clear||cls");
-
+  
   int flag = 0;
-  if(primeiro != NULL && ultimo != NULL){
-
+  if(first != NULL && last != NULL){
+    
   cout << "\n\nÉ uma ocasião especial?\n\n0 - Não\n1 - Sim\n";
   cin >> flag;
 
   if(flag == 0){
-
-    cout << "\n\nO vinho " << primeiro->nome << " deve ser retirado da adega!\nDeseja retira-lo?\n\n0 - Não\n1 - Sim\n";
+    
+    cout << "\n\nO vinho " << first->nome << " deve ser retirado da adega!\nDeseja retira-lo?\n\n0 - Não\n1 - Sim\n";
     cin >> flag;
-
+    
     if(flag == 1){
-     vinho *aux = primeiro;
+     vinho *aux = first;
 
-     if(aux->prox != NULL){
-     primeiro = aux->prox;
-     primeiro->ant = NULL;}
-
+     if(aux->next != NULL){ 
+     first = aux->next;
+     first->prev = NULL;}
+      
      cout << "\nVinho " << aux->nome << " retirado da adega!\n";
-     if(aux->prox == NULL){
-       primeiro = NULL;
-       ultimo = NULL;
-     }
-     else{
+     if(aux->next == NULL){
+       first = NULL;
+       last = NULL;
+     } 
+     else{ 
      free(aux);
      }
     }
 
     else if (flag == 0){
-     return;
+     return; 
   }
 
       else{
@@ -118,32 +110,32 @@ void retirar(vinho *& primeiro, vinho *& ultimo){
       }
 
     }
-
+    
   else if(flag == 1){
-
-    cout << "\n\nO vinho " << ultimo->nome << " deve ser retirado da adega!\nDeseja retira-lo?\n\n0 - Não\n1 - Sim\n";
+    
+    cout << "\n\nO vinho " << last->nome << " deve ser retirado da adega!\nDeseja retira-lo?\n\n0 - Não\n1 - Sim\n";
     cin >> flag;
-
+    
     if(flag == 1){
-     vinho *aux = ultimo;
-      if(aux->ant != NULL){
-      ultimo = aux->ant;
-      ultimo->prox = NULL;
+     vinho *aux = last;
+      if(aux->prev != NULL){
+      last = aux->prev;
+      last->next = NULL;
       }
-
+      
      cout << "Vinho " << aux->nome << " retirado da adega!\n";
-
-      if(aux->ant == NULL){
-
-        ultimo = NULL;
-        primeiro = NULL;
-     }
-     else{
+      
+      if(aux->prev == NULL){
+        
+        last = NULL;
+        first = NULL;
+     } 
+     else{ 
      free(aux);
     }
     }
     else if (flag == 0){
-     return;
+     return; 
   }
 
       else{
@@ -151,7 +143,7 @@ void retirar(vinho *& primeiro, vinho *& ultimo){
       }
 
     }
-
+      
   else{
     cout << "Valor não definido!\n";
   }
@@ -160,92 +152,83 @@ void retirar(vinho *& primeiro, vinho *& ultimo){
   else{
     cout<<"Não há vinhos na adega!\n";
     }
+  
+  
 
-
-
-
+  
 }
 
-void listar (vinho *& primeiro, vinho *& ultimo){
+void list (vinho *& first, vinho *& last){
   system("clear||cls");
 
-
-  if(primeiro != NULL && ultimo != NULL){
+  
+  if(first != NULL && last != NULL){
   vinho *aux;
 
   //Listar 5 primeiros//
 
-  aux = ultimo;
+  aux = last;
   cout << "Mais recentes:\n\n";
   cout << "\tNOME\t\t\t|\t\tPAÍS\t\t|\t\t\tTIPO\t\t|\t\tSAFRA\n";
   for (int i=0; i<5; i++){
-    if(aux==NULL){
-
-    }
-
-    else{
+    
       cout << "\t" << aux->nome;
-      cout << "\t\t|\t\t" << aux->pais;
+      cout << "\t|\t\t" << aux->pais;
       cout << "\t";
       cout << "\t|\t\t\t" << aux->tipo;
       cout << "\t\t|\t\t" << aux->safra << "\n";
-      aux = aux->ant;
-    }
-  }
-
+      aux = aux->prev;
+      
+      }
     //Listar 5 ultimos//
 
-  aux = primeiro;
+  aux = first;
   cout << "\n\n\nMais antigos:\n\n";
     cout << "\tNOME\t\t\t|\t\tPAÍS\t\t|\t\t\tTIPO\t\t|\t\tSAFRA\n";
   for (int i=0; i<5; i++){
-    if(aux==NULL){
-
-    }
-    else{
+   
      cout << "\t" << aux->nome;
-      cout << "\t\t|\t\t" << aux->pais;
+      cout << "\t|\t\t" << aux->pais;
       cout << "\t";
       cout << "\t|\t\t\t" << aux->tipo;
       cout << "\t\t|\t\t" << aux->safra << "\n";
-      aux = aux->prox;
+      aux = aux->next;
     }
+  
   }
-
-  }
+  
   else{
     cout<<"Não há vinhos na adega!\n";
     }
-
-}
+  }
 
 int main() {
-
+  
   string sair;
-  vinho *primeiro = NULL;
-  vinho *ultimo = NULL;
+  vinho *first = NULL;
+  vinho *last = NULL;
 
   bool exit = false;
-  while(exit != true) {
+  while(exit != true) {  
   switch(menu()) {
     case 1:
-    add(primeiro, ultimo);
+    aloc(first, last);
     cout << "\n\nPressione qualquer tecla para voltar ao menu principal\n";
     cin >> sair;
   break;
 
     case 2:
-    retirar(primeiro, ultimo);
+    remov(first, last);  
     cout << "\n\nPressione qualquer tecla para voltar ao menu principal\n";
     cin >> sair;
     break;
 
     case 3:
-    listar(primeiro, ultimo);
+    list(first, last);
     cout << "\n\nPressione qualquer tecla para voltar ao menu principal\n";
     cin >> sair;
     break;
-
+    
     case 4:
     exit = true;
     break;
@@ -254,9 +237,10 @@ int main() {
     cout << "\n\nPressione qualquer tecla para voltar ao menu principal\n";
     cin >> sair;
     break;
-
-  }
+    
+  }  
  }
   system("clear||cls");
   cout << "Programa encerrado!";
 }
+
